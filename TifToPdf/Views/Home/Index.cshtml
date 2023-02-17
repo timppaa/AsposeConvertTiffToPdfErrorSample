@@ -1,0 +1,39 @@
+﻿@model TifToPdf.Controllers.FileModel
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+<form asp-action="ConvertToPdf" asp-controller="Home" enctype="multipart/form-data" method="post" class="form-group">
+    @Html.AntiForgeryToken()
+    <div class="row form-group">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h2>Convert files to PDF:</h2>
+                </div>
+                <div class="card-body">
+                    <div class="form-group">
+                        <div class="col-md-10">
+                            <div class="form-group">
+                                <label asp-for="Files"></label>
+                                <input type="file" multiple="multiple" asp-for="Files" class="form-control" />
+                                <span asp-validation-for="Files" class="text-danger"></span>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="text-right">
+                        <input type="submit" value="Upload Files" class="btn btn-secondary btn-sm" />
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
