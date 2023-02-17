@@ -44,8 +44,6 @@ namespace ConvertTiffToPdfApi.Controllers
             }
 
             var mergedPdf = MergePdf(resultfileList, request.ResultFileName, conformanceLevel);
-            resultfileList.Clear();
-            request.FileRequestModels.Clear();
             return mergedPdf;
         }
 
@@ -82,7 +80,7 @@ namespace ConvertTiffToPdfApi.Controllers
                     //SetPageInfo(page);
 
                     //Denna flagga gör så att det ibland smäller oväntat. Nackdelen med att ha den av är att filstorleken blir enormt mycket större än om man har den på.
-                    image.IsBlackWhite = true;
+                    //image.IsBlackWhite = true;
 
 
 
