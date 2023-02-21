@@ -71,17 +71,7 @@ namespace ConvertTiffToPdfApi
 
         public void Dispose()
         {
-            Dispose(true);
-            GC.SuppressFinalize(this);
-        }
-
-        public virtual void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                _pdf?.Pages?.Clear();
-                _pdf?.Dispose();
-            }
+            _pdf?.Dispose();
         }
     }
 }
